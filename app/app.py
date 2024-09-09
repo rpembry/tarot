@@ -6,12 +6,12 @@ import markdown
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/tarot/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/read_tarot', methods=['POST'])
+@app.route('/tarot/read_tarot', methods=['POST'])
 def read_tarot():
     prompt = prompt="Give me a reading for this prompt: "+request.form.get('prompt')
     deck = TarotDeck()
@@ -47,7 +47,7 @@ def read_tarot():
     return redirect(url_for('display_reading', reading=completion.choices[0].message.content))
 
 
-@app.route('/reading')
+@app.route('/tarot/reading')
 def display_reading():
     # Get the Tarot reading passed in the URL
     tarot_reading = request.args.get('reading')
