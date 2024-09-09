@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Majestic Tarot Reading</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
 
     <h1>Your Majestic Tarot Reading</h1>
-
+    <!-- Display the spread of 3 cards -->
+    <div class="reading-container">
+        {% for card in spread %}
+    <div class="tarot-card">
+        <img src="{{ url_for('static', filename='images/' + card['image']) }}" alt="{{ card['name'] }}" class="card-image">
+                <div class="card-details">
+                    <h3>{{ card['name'] }}</h3>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
     <!-- Use markdown to display the tarot reading -->
     <div>
         {{ reading|safe }}

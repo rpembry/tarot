@@ -3,6 +3,7 @@ from TarotDeck import TarotDeck
 from TarotCard import TarotCard
 from openai import OpenAI
 import markdown
+import json
 
 app = Flask(__name__)
 
@@ -40,11 +41,10 @@ def read_tarot():
         }
     ]
 )
+    content = completion.choices[0].message.content
+    serialized_spread = [card.to_dict() for card,is_reversed in spread]
 
-    print()
-    # Implement Tarot reading logic here
-    response = {"message": "Your Tarot reading", "reading": completion.choices[0].message.content}
-    return redirect(url_for('display_reading', reading=completion.choices[0].message.content))
+    return redirect(url_for('display_reading', reading=content,spread=json.dumps(serialized_spread)))
 
 
 @app.route('/tarot/reading')
@@ -55,11 +55,14 @@ def display_reading():
     if not tarot_reading:
         return "No reading found."
 
+    spread_json = request.args.get('spread', '[]')  # Get spread from URL (passed as JSON string)
+    spread = json.loads(spread_json)  # Parse JSON back into a Python list
+
     # Convert the Tarot reading from plain text to Markdown
     tarot_reading_markdown = markdown.markdown(tarot_reading)
 
     # Render the Markdown result on the page
-    return render_template('reading.html', reading=tarot_reading_markdown)
+    return render_template('reading.html', reading=tarot_reading_markdown,spread=spread)
 
 
 if __name__ == '__main__':
