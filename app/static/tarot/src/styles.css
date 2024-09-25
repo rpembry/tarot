@@ -1,0 +1,71 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Container for the Tarot reading */
+.reading-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Individual Tarot card styles */
+.tarot-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Limit width on larger screens */
+    transition: transform 0.3s;
+}
+
+/* Card hover effect */
+.tarot-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Tarot card image */
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Card details: name and description */
+.card-details h3 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+.card-details p {
+    color: #555;
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .tarot-card {
+        width: calc(33.333% - 40px); /* 3 cards per row on tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .tarot-card {
+        width: calc(25% - 40px); /* 4 cards per row on larger screens */
+    }
+}
+
