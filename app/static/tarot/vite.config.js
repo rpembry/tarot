@@ -17,6 +17,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
   },
+  base: '/tarot/',
   define: {
     // Use environment variables for API URLs, etc.
     'process.env': process.env
