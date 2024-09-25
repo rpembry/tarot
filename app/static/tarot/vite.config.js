@@ -17,4 +17,8 @@ export default defineConfig({
   build: {
     target: 'esnext',
   },
+  define: {
+    // Use environment variables for API URLs, etc.
+    'process.env': process.env
+  }
 });

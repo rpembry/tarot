@@ -69,3 +69,163 @@ h1 {
     }
 }
 
+/* General styles for the container holding the markdown content */
+.markdown-content {
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    color: #333;
+  }
+  
+  /* Headings */
+  .markdown-content h1,
+  .markdown-content h2,
+  .markdown-content h3,
+  .markdown-content h4,
+  .markdown-content h5,
+  .markdown-content h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  /* Paragraphs */
+  .markdown-content p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    text-align: justify;
+  }
+  
+  /* Blockquotes */
+  .markdown-content blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 15px;
+    margin: 1em 0;
+    color: #666;
+    font-style: italic;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+  
+  /* Lists */
+  .markdown-content ul,
+  .markdown-content ol {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 30px;
+  }
+  
+  .markdown-content li {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Links */
+  .markdown-content a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .markdown-content a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Code blocks */
+  .markdown-content pre {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow-x: auto;
+  }
+  
+  .markdown-content code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+  
+  /* Horizontal rule */
+  .markdown-content hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2em 0;
+  }
+  
+  /* Images */
+  .markdown-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    display: block;
+  }
+  
+  /* Tables */
+  .markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+  }
+  
+  .markdown-content th,
+  .markdown-content td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .markdown-content th {
+    background-color: #f9f9f9;
+    text-align: left;
+  }
+  
+  .markdown-content td {
+    background-color: #fff;
+  }
+
+  /* Style for the text input */
+.text-input {
+    width: 100%; /* Make the input take the full width of its container */
+    max-width: 600px; /* Set a max width so it doesn't get too wide */
+    padding: 12px 20px; /* Add padding inside the input to make it larger */
+    font-size: 18px; /* Increase the font size */
+    border-radius: 25px; /* Make the input rounded */
+    border: 1px solid #ccc; /* Add a subtle border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a light shadow for depth */
+    outline: none; /* Remove the default outline */
+    transition: box-shadow 0.3s ease; /* Optional: Add transition for focus effect */
+  }
+  
+  .text-input:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on focus */
+    border-color: #007bff; /* Optional: Change border color on focus */
+  }
+
+  /* Style for the submit button */
+.submit-button {
+    background-color: #add8e6; /* Light blue background */
+    color: white; /* Text color */
+    padding: 12px 20px; /* Add padding to make the button larger */
+    font-size: 16px; /* Increase the font size */
+    border-radius: 30px; /* Make the button rounder */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Show a pointer when hovering */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effects */
+  }
+  
+  .submit-button:hover {
+    background-color: #87ceeb; /* Darken the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  }
+  
+  .submit-button:active {
+    background-color: #4682b4; /* Darker blue on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce shadow when clicked */
+  }
+  
